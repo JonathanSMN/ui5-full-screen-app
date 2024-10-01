@@ -12,7 +12,8 @@ sap.ui.define([
 
         return UIComponent.extend("student01.com.sap.training.ux402.fullscreen.ux402fullscreen.Component", {
             metadata: {
-                manifest: "json"
+                manifest: "json",
+                config: { fullWidth: true }
             },
 
             /**

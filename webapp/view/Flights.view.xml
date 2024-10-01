@@ -4,6 +4,7 @@
     displayBlock="true"
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
+    xmlns:cust="student01.com.sap.training.ux402.fullscreen.ux402fullscreen.control"
 >
     <Page
         id="idFlightsPage"
@@ -50,28 +51,64 @@
                     </headerToolbar>
 
                     <columns>
-                        <Column id="column1" width="12em">
+                        <Column
+                            id="column1"
+                            width="12em"
+                        >
                             <Text
                                 id="text1"
                                 text="{i18n>carriername}"
                             />
                         </Column>
-                        <Column id="column2" minScreenWidth="Tablet" demandPopin="true">
+                        <Column
+                            id="column2"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                        >
                             <Text
                                 id="text2"
                                 text="{i18n>flightdate}"
                             />
                         </Column>
-                        <Column id="column3" minScreenWidth="Tablet" demandPopin="true">
+                        <Column
+                            id="column3"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                        >
                             <Text
                                 id="text3"
                                 text="{i18n>seatmax}"
                             />
                         </Column>
-                        <Column id="column4" hAlign="Right">
+                        <Column
+                            id="column4"
+                            hAlign="Right"
+                        >
                             <Text
                                 id="text4"
                                 text="{i18n>seatocc}"
+                            />
+                        </Column>
+                        <Column
+                            id="column6"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            hAlign="Center"
+                        >
+                            <Text
+                                id="text9"
+                                text="{i18n>planeInfo}"
+                            />
+                        </Column>
+                        <Column
+                            id="column5"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            hAlign="Center"
+                        >
+                            <Text
+                                id="text8"
+                                text="{i18n>bookaction}"
                             />
                         </Column>
                     </columns>
@@ -95,6 +132,18 @@
                                 <Text
                                     id="text7"
                                     text="{Seatsocc}"
+                                />
+                                <cust:PlaneInfo
+                                    id="planeInfo1"
+                                    seatsMax="{Seatsmax}"
+                                    seatsOcc="{Seatsocc}"
+                                />
+                                <cust:HoverButton
+                                    id="hoverButton1"
+                                    text="{i18n>bookaction}"
+                                    allowHover="true"
+                                    hoverText="{=${Seatsmax} - ${Seatsocc}}"
+                                    hover="onHover"
                                 />
                             </cells>
                         </ColumnListItem>
